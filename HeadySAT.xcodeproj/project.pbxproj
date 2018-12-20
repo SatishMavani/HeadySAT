@@ -14,6 +14,11 @@
 		76FF37AB21CA7044009D3C27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FF37AA21CA7044009D3C27 /* Assets.xcassets */; };
 		76FF37AE21CA7044009D3C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FF37AC21CA7044009D3C27 /* LaunchScreen.storyboard */; };
 		76FF37B821CA8067009D3C27 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF37B721CA8067009D3C27 /* ResponseData.swift */; };
+		76FF37BA21CA8191009D3C27 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF37B921CA8191009D3C27 /* Constant.swift */; };
+		76FF37BE21CA91E0009D3C27 /* ProductCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF37BD21CA91E0009D3C27 /* ProductCollectionVC.swift */; };
+		76FF37C221CABECB009D3C27 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF37C121CABECB009D3C27 /* ProductViewCell.swift */; };
+		76FF37C421CADB30009D3C27 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF37C321CADB30009D3C27 /* ProductDetailVC.swift */; };
+		76FF37C621CBDAC4009D3C27 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF37C521CBDAC4009D3C27 /* PaymentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		76FF37AD21CA7044009D3C27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76FF37AF21CA7044009D3C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76FF37B721CA8067009D3C27 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		76FF37B921CA8191009D3C27 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		76FF37BD21CA91E0009D3C27 /* ProductCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionVC.swift; sourceTree = "<group>"; };
+		76FF37C121CABECB009D3C27 /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
+		76FF37C321CADB30009D3C27 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		76FF37C521CBDAC4009D3C27 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				76FF37A121CA7044009D3C27 /* AppDelegate.swift */,
+				76FF37C121CABECB009D3C27 /* ProductViewCell.swift */,
 				76FF37A321CA7044009D3C27 /* FirstViewController.swift */,
 				76FF37A521CA7044009D3C27 /* SecondViewController.swift */,
 				76FF37A721CA7044009D3C27 /* Main.storyboard */,
@@ -66,6 +77,10 @@
 				76FF37AA21CA7044009D3C27 /* Assets.xcassets */,
 				76FF37AC21CA7044009D3C27 /* LaunchScreen.storyboard */,
 				76FF37AF21CA7044009D3C27 /* Info.plist */,
+				76FF37B921CA8191009D3C27 /* Constant.swift */,
+				76FF37BD21CA91E0009D3C27 /* ProductCollectionVC.swift */,
+				76FF37C321CADB30009D3C27 /* ProductDetailVC.swift */,
+				76FF37C521CBDAC4009D3C27 /* PaymentVC.swift */,
 			);
 			path = HeadySAT;
 			sourceTree = "<group>";
@@ -141,9 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FF37C221CABECB009D3C27 /* ProductViewCell.swift in Sources */,
 				76FF37A621CA7044009D3C27 /* SecondViewController.swift in Sources */,
 				76FF37A221CA7044009D3C27 /* AppDelegate.swift in Sources */,
+				76FF37BA21CA8191009D3C27 /* Constant.swift in Sources */,
+				76FF37C621CBDAC4009D3C27 /* PaymentVC.swift in Sources */,
 				76FF37B821CA8067009D3C27 /* ResponseData.swift in Sources */,
+				76FF37C421CADB30009D3C27 /* ProductDetailVC.swift in Sources */,
+				76FF37BE21CA91E0009D3C27 /* ProductCollectionVC.swift in Sources */,
 				76FF37A421CA7044009D3C27 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

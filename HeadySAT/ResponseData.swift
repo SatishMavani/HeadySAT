@@ -39,7 +39,7 @@ struct CategoryProduct: Codable {
 }
 
 struct Tax: Codable {
-    let name: Name
+    let name: String
     let value: Double
 }
 
