@@ -86,26 +86,64 @@ extension ProductCollectionVC {
                 let foundProduct = DataSource.shared.categoryProducts.filter{ $0.id == sortedArray[indexPath.row].id}
                 product = foundProduct.first ?? DataSource.shared.categoryProducts.first!
             }
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            dateFormatter.timeZone = TimeZone.autoupdatingCurrent
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            
-            guard let date = dateFormatter.date(from: product.dateAdded) else {
-                fatalError()
-            }
-            print(date)
-            
-            let timestamp = date.timeIntervalSince1970
-            
+          
             cell.productName.text = product.name
-            cell.dateAdded.text = product.dateAdded
             cell.lblID.text = "\(product.id)"
+            cell.dateAdded.text = self.timeAgoStringFromDate(date: self.formatString(dateSring: product.dateAdded))
             return cell
         }
         return UICollectionViewCell()
     }
+    
+    func formatString(dateSring: String) -> Date {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        guard let date = dateFormatter.date(from: dateSring) else {
+            let curDate = Date()
+            return curDate
+        }
+        return date
+        
+    }
+    
+    func timeAgoStringFromDate(date: Date) -> String? {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        
+        let now = Date()
+        
+        let calendar = NSCalendar.current
+        let components1: Set<Calendar.Component> = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
+        let components = calendar.dateComponents(components1, from: date, to: now)
+        
+        if components.year ?? 0 > 0 {
+            formatter.allowedUnits = .year
+        } else if components.month ?? 0 > 0 {
+            formatter.allowedUnits = .month
+        } else if components.weekOfMonth ?? 0 > 0 {
+            formatter.allowedUnits = .weekOfMonth
+        } else if components.day ?? 0 > 0 {
+            formatter.allowedUnits = .day
+        } else if components.hour ?? 0 > 0 {
+            formatter.allowedUnits = [.hour]
+        } else if components.minute ?? 0 > 0 {
+            formatter.allowedUnits = .minute
+        } else {
+            formatter.allowedUnits = .second
+        }
+        
+        let formatString = NSLocalizedString("%@ ago", comment: "Used to say how much time has passed. e.g. '2 hours ago'")
+        
+        guard let timeString = formatter.string(for: components) else {
+            return nil
+        }
+        return String(format: formatString, timeString)
+    }
+    
 }
 
 extension ProductCollectionVC {
